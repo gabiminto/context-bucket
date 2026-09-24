@@ -1,10 +1,32 @@
 {
-  "name": "${PROJECT_NAME}",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "context-bucket",
+  "version": "0.1.0",
+  "description": "Local-first paragraph and note enhancement with context buckets in Obsidian.",
+  "main": "main.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node esbuild.config.mjs production",
+    "build:dev": "npm run typecheck && node esbuild.config.mjs",
+    "dev": "node esbuild.config.mjs",
+    "lint": "eslint src tests",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "release": "npm run build && node scripts/release.mjs"
   },
-  "private": true
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "esbuild": "^0.27.2",
+    "eslint": "^9.39.1",
+    "obsidian": "^1.8.10",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "mammoth": "^1.11.0",
+    "pdfjs-dist": "^5.4.149"
+  }
 }

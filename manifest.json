@@ -1,0 +1,9 @@
+{
+  "id": "context-bucket",
+  "name": "Context Bucket",
+  "version": "0.1.0",
+  "minAppVersion": "1.8.10",
+  "description": "Use local sources and AI to review completed paragraphs and whole notes without sending vault data off-device.",
+  "author": "Context Bucket contributors",
+  "isDesktopOnly": true
+}
